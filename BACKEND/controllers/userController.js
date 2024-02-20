@@ -14,7 +14,7 @@ const getAllUsers = asyncHandler(async(req, res) => {
   if(!users?.length){
     return res.status(400).json({ message: 'no users found'})
   }
-  res.json(users)
+  res.status(200).json(users)
 })
 
 //Create new user
@@ -115,7 +115,7 @@ const deleteUser = asyncHandler(async(req, res) => {
 
   const reply = `Username ${result.username} with ID ${result._id} deleted`
 
-  res.json(reply)
+  res.status(200).json(reply)
 })
 
 module.exports = {
